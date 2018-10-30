@@ -542,6 +542,7 @@ U32 ZSTD_insertBtAndGetAllMatches (
     DEBUGLOG(8, "ZSTD_insertBtAndGetAllMatches: current=%u", current);
 
     /* check repCode */
+    assert(ll0 <= 1);   /* necessarily 1 or 0 */
     {   U32 const lastR = ZSTD_REP_NUM + ll0;
         U32 repCode;
         for (repCode = ll0; repCode < lastR; repCode++) {
